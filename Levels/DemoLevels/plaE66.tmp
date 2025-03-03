@@ -1,0 +1,63 @@
+[gd_scene load_steps=9 format=3 uid="uid://chb0shhvrv8ko"]
+
+[ext_resource type="Texture2D" uid="uid://dpyya8vwu3fyr" path="res://Assets/Background.png" id="1_qx6k2"]
+[ext_resource type="Texture2D" uid="uid://rbjiyjrvc17" path="res://Assets/8-Directional Gameboy Character Template/loose sprites.png" id="2_kui48"]
+[ext_resource type="Script" path="res://Levels/DemoLevels/Player.gd" id="2_urqig"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ecx5g"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n2i1y"]
+atlas = ExtResource("2_kui48")
+region = Rect2(0, 96, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g6ko3"]
+atlas = ExtResource("2_kui48")
+region = Rect2(16, 96, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dqy1d"]
+atlas = ExtResource("2_kui48")
+region = Rect2(48, 96, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_18vx7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n2i1y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g6ko3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n2i1y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dqy1d")
+}],
+"loop": true,
+"name": &"walk0",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"walk1",
+"speed": 5.0
+}]
+
+[node name="PlayerMovementDemo" type="Node2D"]
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(160, 120)
+texture = ExtResource("1_qx6k2")
+
+[node name="TileMap" type="TileMap" parent="."]
+format = 2
+
+[node name="Player" type="CharacterBody2D" parent="."]
+script = ExtResource("2_urqig")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+shape = SubResource("RectangleShape2D_ecx5g")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
+sprite_frames = SubResource("SpriteFrames_18vx7")
+animation = &"walk0"
