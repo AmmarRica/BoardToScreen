@@ -18,6 +18,8 @@ func _physics_process(delta: float) -> void:
 	get_Input()
 
 	move_and_slide()
+
+# will axdd different directions later
 	
 	if velocity.length() != 0:
 		$AnimatedSprite2D.play()
