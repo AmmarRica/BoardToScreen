@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://rbjiyjrvc17"
-path="res://.godot/imported/loose sprites.png-c732ecb2ed91b8f536df5dd5079f904c.ctex"
+uid="uid://dqwwiph8fpppx"
+path="res://.godot/imported/FG_Cellar_C.png-38d137d63f962cd9096f0d5e68057442.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/8-Directional Gameboy Character Template/loose sprites.png"
-dest_files=["res://.godot/imported/loose sprites.png-c732ecb2ed91b8f536df5dd5079f904c.ctex"]
+source_file="res://Assets/Sprites/Farm Game Dungeon Cellar Tileset/RPG Maker/RPG Maker MZ (32x32)/tilesets/FG_Cellar_C.png"
+dest_files=["res://.godot/imported/FG_Cellar_C.png-38d137d63f962cd9096f0d5e68057442.ctex"]
 
 [params]
 

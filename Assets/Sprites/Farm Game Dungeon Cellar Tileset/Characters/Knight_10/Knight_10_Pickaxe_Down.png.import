@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dpyya8vwu3fyr"
-path="res://.godot/imported/Background.png-e8880a50f4091751eaed728281d3c21e.ctex"
+uid="uid://t4v6t3gf5enl"
+path="res://.godot/imported/Knight_10_Pickaxe_Down.png-9af974686b37c6f0b4e46ecd1edff225.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Background.png"
-dest_files=["res://.godot/imported/Background.png-e8880a50f4091751eaed728281d3c21e.ctex"]
+source_file="res://Assets/Sprites/Farm Game Dungeon Cellar Tileset/Characters/Knight_10/Knight_10_Pickaxe_Down.png"
+dest_files=["res://.godot/imported/Knight_10_Pickaxe_Down.png-9af974686b37c6f0b4e46ecd1edff225.ctex"]
 
 [params]
 

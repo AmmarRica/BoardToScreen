@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://doewb682cpmja"
-path="res://.godot/imported/loose sprites gbstudio.png-953b75e2ce10c47b8d0d960ce1ee279b.ctex"
+uid="uid://rbjiyjrvc17"
+path="res://.godot/imported/loose sprites.png-b7b8eb489d50de80287f9cd815756234.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/8-Directional Gameboy Character Template/loose sprites gbstudio.png"
-dest_files=["res://.godot/imported/loose sprites gbstudio.png-953b75e2ce10c47b8d0d960ce1ee279b.ctex"]
+source_file="res://Assets/Sprites/8-Directional Gameboy Character Template/loose sprites.png"
+dest_files=["res://.godot/imported/loose sprites.png-b7b8eb489d50de80287f9cd815756234.ctex"]
 
 [params]
 
