@@ -1,6 +1,10 @@
 extends CharacterBody2D
 
 @export var player_number: int
+@export var SelectedPlayer1: bool = false
+@export var SelectedPlayer2: bool = false
+@export var SelectedPlayer3: bool = false
+@export var SelectedPlayer4: bool = false
 
 const SPEED = 100
 var screen_size: Vector2
@@ -41,17 +45,26 @@ func assign_player_color() -> void:
 		_:
 			$AnimatedSprite2D.modulate = Color(1, 1, 1)  # Default (White)
 
-func get_Input():
-	var input_dir = Input.get_vector("left", "right", "up", "down")
-	if input_dir != Vector2.ZERO:
-		last_direction = input_dir  # Store last direction
-	velocity = input_dir.normalized() * SPEED
+func _get_input():
+	# Determine if this player is selected
+	var is_selected = (
+		(player_number == 1 and $"..".SelectedPlayer1) or
+		(player_number == 2 and $"..".SelectedPlayer2) or
+		(player_number == 3 and $"..".SelectedPlayer3) or
+		(player_number == 4 and $"..".SelectedPlayer4)
+	)
+
+	# Only process movement if the player is selected
+	if is_selected:
+		var input_dir = Input.get_vector("left", "right", "up", "down")
+		if input_dir != Vector2.ZERO:
+			last_direction = input_dir  # Store last direction
+		velocity = input_dir.normalized() * SPEED
+	else:
+		velocity = Vector2.ZERO  # Stop movement if not selected
 
 func _physics_process(delta: float) -> void:
-	if player_number != $"..".SelectedPlayer:
-		return
-
-	get_Input()
+	_get_input()
 	move_and_slide()
 
 	# Determine animation direction based on movement or last direction

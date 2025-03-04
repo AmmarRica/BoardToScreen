@@ -1,13 +1,12 @@
 extends Node
 
-@export var SelectedPlayer: int = 1  # Start with player 1
+@export var SelectedPlayer1: bool = false
+@export var SelectedPlayer2: bool = false
+@export var SelectedPlayer3: bool = false
+@export var SelectedPlayer4: bool = false
 
 func _process(delta: float) -> void:
-	if Input.is_physical_key_pressed(KEY_1):
-		SelectedPlayer = 1
-	elif Input.is_physical_key_pressed(KEY_2):
-		SelectedPlayer = 2
-	elif Input.is_physical_key_pressed(KEY_3):
-		SelectedPlayer = 3
-	elif Input.is_physical_key_pressed(KEY_4):
-		SelectedPlayer = 4
+	SelectedPlayer1 = Input.is_physical_key_pressed(KEY_1)
+	SelectedPlayer2 = Input.is_physical_key_pressed(KEY_2)
+	SelectedPlayer3 = Input.is_physical_key_pressed(KEY_3)
+	SelectedPlayer4 = Input.is_physical_key_pressed(KEY_4)
