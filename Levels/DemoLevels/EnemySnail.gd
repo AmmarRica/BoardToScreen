@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 var player_group
 @export var speed : float
+@export var slowMultiply : int
 
 func _ready():
 	player_group = get_node("../PlayerGroup")  # Get the player group node
@@ -10,7 +11,7 @@ func _process(delta):
 	var closest_player = get_closest_player()
 	if closest_player:
 		var direction = (closest_player.position - position).normalized()
-		velocity = direction * speed
+		velocity = direction * speed / slowMultiply
 		move_and_slide()
 	else :
 		print("not found ")

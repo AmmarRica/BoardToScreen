@@ -37,7 +37,7 @@ func _on_InteractiveObject_area_exited(body: Node) -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	# Start counting down when the player is within range and holding Z, but only if the object is not opened
-	if player_in_range and Input.is_physical_key_pressed(KEY_Z) and not object_opened:  
+	if player_in_range and Input.is_action_pressed("A")  and not object_opened:  
 		if not is_counting_down:
 			is_counting_down = true  # Start the countdown when Z is pressed
 		holding_time += delta  # Increment the holding time

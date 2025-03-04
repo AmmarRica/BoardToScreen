@@ -6,7 +6,7 @@ extends Node
 @export var SelectedPlayer4: bool = false
 
 func _process(delta: float) -> void:
-	SelectedPlayer1 = Input.is_physical_key_pressed(KEY_1)
-	SelectedPlayer2 = Input.is_physical_key_pressed(KEY_2)
-	SelectedPlayer3 = Input.is_physical_key_pressed(KEY_3)
-	SelectedPlayer4 = Input.is_physical_key_pressed(KEY_4)
+	SelectedPlayer1 = Input.is_action_pressed("player1") 
+	SelectedPlayer2 = Input.is_action_pressed("player2")
+	SelectedPlayer3 = Input.is_action_pressed("player3")
+	SelectedPlayer4 = Input.is_action_pressed("player4")
