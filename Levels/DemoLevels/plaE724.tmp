@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://chb0shhvrv8ko"]
+[gd_scene load_steps=16 format=3 uid="uid://chb0shhvrv8ko"]
 
 [ext_resource type="Texture2D" uid="uid://dpyya8vwu3fyr" path="res://Assets/Sprites/Background.png" id="1_qx6k2"]
 [ext_resource type="Texture2D" uid="uid://506vafgctvig" path="res://Assets/Sprites/Farm Game Dungeon Cellar Tileset/Tilesets/FG_Cellar.png" id="4_1e2x6"]
@@ -6,7 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://b17fhx1y4tq85" path="res://Assets/Sprites/Farm Game Dungeon Cellar Tileset/Tilesets/FG_Cellar_Doors.png" id="5_lvgkl"]
 [ext_resource type="PackedScene" uid="uid://bdf44glnefiev" path="res://Controllers/player.tscn" id="5_ptwr6"]
 [ext_resource type="Script" path="res://Controllers/PlayerGroupController.gd" id="5_t7dy3"]
-[ext_resource type="PackedScene" uid="uid://cdjj1dk7o67qb" path="res://Controllers/InteractiveObject.tscn" id="7_hjduf"]
+[ext_resource type="Texture2D" uid="uid://bmuhad8gr70fi" path="res://Assets/Sprites/chest2_closed.png" id="7_18y64"]
+[ext_resource type="Script" path="res://Levels/DemoLevels/InteractiveObject.gd" id="7_ahay8"]
+[ext_resource type="Texture2D" uid="uid://ctoawwsrpwwsy" path="res://Assets/Sprites/chest2_open.png" id="9_jp73w"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7nsre"]
 texture = ExtResource("4_1e2x6")
@@ -7820,6 +7822,22 @@ sources/0 = SubResource("TileSetAtlasSource_7nsre")
 sources/1 = SubResource("TileSetAtlasSource_3oj33")
 sources/2 = SubResource("TileSetAtlasSource_6wxx3")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ucxjf"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5idnq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_18y64")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_jp73w")
+}],
+"loop": false,
+"name": &"open",
+"speed": 5.0
+}]
+
 [node name="PlayerMovementDemo" type="Node2D"]
 
 [node name="Background" type="Sprite2D" parent="."]
@@ -7847,23 +7865,22 @@ player_number = 3
 [node name="Player4" parent="PlayerGroup" instance=ExtResource("5_ptwr6")]
 player_number = 4
 
-[node name="Item" parent="." instance=ExtResource("7_hjduf")]
-position = Vector2(190, 72)
+[node name="Item" type="Area2D" parent="."]
+position = Vector2(54, 119)
+collision_mask = 3
+script = ExtResource("7_ahay8")
 
-[node name="Item2" parent="." instance=ExtResource("7_hjduf")]
-position = Vector2(191, 176)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Item"]
+shape = SubResource("RectangleShape2D_ucxjf")
 
-[node name="Item3" parent="." instance=ExtResource("7_hjduf")]
-position = Vector2(45, 178)
+[node name="Label" type="Label" parent="Item"]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Example"
 
-[node name="Item4" parent="." instance=ExtResource("7_hjduf")]
-position = Vector2(87, 178)
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Item"]
+sprite_frames = SubResource("SpriteFrames_5idnq")
+animation = &"open"
 
-[node name="Item5" parent="." instance=ExtResource("7_hjduf")]
-position = Vector2(131, 180)
-
-[node name="Item6" parent="." instance=ExtResource("7_hjduf")]
-position = Vector2(53, 74)
-
-[node name="Item7" parent="." instance=ExtResource("7_hjduf")]
-position = Vector2(54, 118)
+[connection signal="body_entered" from="Item" to="Item" method="_on_body_entered"]
+[connection signal="body_exited" from="Item" to="Item" method="_on_body_exited"]

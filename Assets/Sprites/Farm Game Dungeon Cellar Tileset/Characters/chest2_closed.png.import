@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bpxdvvkhn2dac"
-path="res://.godot/imported/FG_Cellar_D.png-2327f49857a48764cc24dd3b6bd45e0b.ctex"
+uid="uid://iv58rlvbi6rl"
+path="res://.godot/imported/chest2_closed.png-0f33bae1476a2e4148368382cacc1fe9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/Farm Game Dungeon Cellar Tileset/RPG Maker/RPG Maker MZ (16x16)/tilesets/FG_Cellar_D.png"
-dest_files=["res://.godot/imported/FG_Cellar_D.png-2327f49857a48764cc24dd3b6bd45e0b.ctex"]
+source_file="res://Assets/Sprites/Farm Game Dungeon Cellar Tileset/Characters/chest2_closed.png"
+dest_files=["res://.godot/imported/chest2_closed.png-0f33bae1476a2e4148368382cacc1fe9.ctex"]
 
 [params]
 

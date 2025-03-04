@@ -7,16 +7,17 @@ var screen_size: Vector2
 var last_direction: Vector2 = Vector2.DOWN  # Default to facing down
 
 func _ready() -> void:
+	add_to_group("player")
 	screen_size = get_viewport_rect().size 
 	var center_x = screen_size.x / 2
 	var center_y = screen_size.y / 2
 	
 	# Define offsets for 4 players (adjust as needed)
 	var spawn_offsets = [
-		Vector2(5, 5),  # Player 1
-		Vector2(5, -5), # Player 2
-		Vector2(-5, 5), # Player 3
-		Vector2(-5, -5) # Player 4
+		Vector2(10, 10),  # Player 1
+		Vector2(10, -10), # Player 2
+		Vector2(-10, 10), # Player 3
+		Vector2(-10, -10) # Player 4
 	]
 
 	# Apply spawn offset based on player number
