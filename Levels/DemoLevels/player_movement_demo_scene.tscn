@@ -1,5 +1,6 @@
-[gd_scene load_steps=17 format=3 uid="uid://chb0shhvrv8ko"]
+[gd_scene load_steps=19 format=3 uid="uid://chb0shhvrv8ko"]
 
+[ext_resource type="Texture2D" uid="uid://25fbtq6keqyc" path="res://Assets/Sprites/lightpix.png" id="1_6vh3c"]
 [ext_resource type="Texture2D" uid="uid://dpyya8vwu3fyr" path="res://Assets/Sprites/Background.png" id="1_qx6k2"]
 [ext_resource type="Texture2D" uid="uid://506vafgctvig" path="res://Assets/Sprites/Farm Game Dungeon Cellar Tileset/Tilesets/FG_Cellar.png" id="4_1e2x6"]
 [ext_resource type="Texture2D" uid="uid://c5kehim101b3m" path="res://Assets/Sprites/Humble Gift - v1.3/PNG/SpriteSheet.png" id="4_jpm2m"]
@@ -10,6 +11,10 @@
 [ext_resource type="Script" path="res://Levels/DemoLevels/EnemySnail.gd" id="8_48ipv"]
 [ext_resource type="Texture2D" uid="uid://cg2xnkdlkti7b" path="res://Assets/Sprites/giant_snail.png" id="8_eldvt"]
 [ext_resource type="Texture2D" uid="uid://bm4upm0rq14yj" path="res://Assets/Sprites/giant_snail - Copy.png" id="9_2qyy0"]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_rf0et"]
+cull_mode = 1
+polygon = PackedVector2Array(160, 66, 196, 69, 170, 94)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7nsre"]
 texture = ExtResource("4_1e2x6")
@@ -7870,6 +7875,19 @@ animations = [{
 
 [node name="PlayerMovementDemo" type="Node2D"]
 
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(112, 114)
+scale = Vector2(10, 10)
+energy = 4.25
+shadow_enabled = true
+shadow_color = Color(0.215686, 0.215686, 0.215686, 0)
+shadow_filter = 2
+shadow_filter_smooth = 1.0
+texture = ExtResource("1_6vh3c")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_rf0et")
+
 [node name="Background" type="Sprite2D" parent="."]
 position = Vector2(160, 120)
 texture = ExtResource("1_qx6k2")
@@ -7902,24 +7920,31 @@ player_number = 4
 
 [node name="Item" parent="." instance=ExtResource("7_hjduf")]
 position = Vector2(57, 150)
+hold_time_required = 5.0
 
 [node name="Item2" parent="." instance=ExtResource("7_hjduf")]
 position = Vector2(82, 77)
+hold_time_required = 5.0
 
 [node name="Item3" parent="." instance=ExtResource("7_hjduf")]
 position = Vector2(45, 178)
+hold_time_required = 5.0
 
 [node name="Item4" parent="." instance=ExtResource("7_hjduf")]
 position = Vector2(87, 178)
+hold_time_required = 5.0
 
 [node name="Item5" parent="." instance=ExtResource("7_hjduf")]
 position = Vector2(131, 180)
+hold_time_required = 5.0
 
 [node name="Item6" parent="." instance=ExtResource("7_hjduf")]
 position = Vector2(53, 74)
+hold_time_required = 5.0
 
 [node name="Item7" parent="." instance=ExtResource("7_hjduf")]
 position = Vector2(54, 118)
+hold_time_required = 5.0
 
 [node name="EnemySnail" type="CharacterBody2D" parent="."]
 position = Vector2(185, -1)

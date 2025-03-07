@@ -18,10 +18,10 @@ func _ready() -> void:
 	
 	# Define offsets for 4 players (adjust as needed)
 	var spawn_offsets = [
-		Vector2(10, 10),  # Player 1
-		Vector2(10, -10), # Player 2
-		Vector2(-10, 10), # Player 3
-		Vector2(-10, -10) # Player 4
+		Vector2(15, 15),  # Player 1
+		Vector2(15, -15), # Player 2
+		Vector2(-15, 15), # Player 3
+		Vector2(-15, -15) # Player 4
 	]
 
 	# Apply spawn offset based on player number

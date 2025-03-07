@@ -1,7 +1,8 @@
-[gd_scene load_steps=36 format=3 uid="uid://bdf44glnefiev"]
+[gd_scene load_steps=37 format=3 uid="uid://bdf44glnefiev"]
 
 [ext_resource type="Script" path="res://Levels/DemoLevels/Player.gd" id="1_k5fie"]
 [ext_resource type="Texture2D" uid="uid://rbjiyjrvc17" path="res://Assets/Sprites/8-Directional Gameboy Character Template/loose sprites.png" id="2_f3u4a"]
+[ext_resource type="Texture2D" uid="uid://25fbtq6keqyc" path="res://Assets/Sprites/lightpix.png" id="3_o75wl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ecx5g"]
 
@@ -277,3 +278,8 @@ shape = SubResource("RectangleShape2D_ecx5g")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_18vx7")
 animation = &"walk7"
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+energy = 2.0
+shadow_enabled = true
+texture = ExtResource("3_o75wl")
